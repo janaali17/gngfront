@@ -1,111 +1,207 @@
-// src/components/GetToKnowYourself.js
 import React, { useState } from "react";
+import "./GetToKnowYourself.css";
 
 const GetToKnowYourself = () => {
-  const [formData, setFormData] = useState({
-    age: "",
+  const [step, setStep] = useState(1); // Track the current slide
+  const [answers, setAnswers] = useState({
+    ageGroup: "",
     skinType: "",
     priceRange: "",
     productType: "",
   });
 
-  const [recommendations, setRecommendations] = useState([]);
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+  const handleSelect = (field, value) => {
+    setAnswers({ ...answers, [field]: value });
+    setStep(step + 1);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    // API call to fetch skincare recommendations
-    fetch("http://localhost:1784/skincare/getdata", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        setRecommendations(data); // Update recommendations based on the response
-        alert("Recommendations fetched successfully!");
-      })
-      .catch((err) => {
-        console.error(err);
-        alert("An error occurred while fetching recommendations.");
-      });
+  const previousStep = () => {
+    setStep(step - 1);
   };
 
-  return (
-    <div style={{ padding: "20px", fontFamily: "Arial, sans-serif" }}>
-      <h1>Get to Know Yourself</h1>
-      <p>
-        Fill out the form below to get personalized skincare product
-        recommendations tailored to your needs.
-      </p>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Age:
-          <input
-            type="number"
-            name="age"
-            value={formData.age}
-            onChange={handleChange}
-            required
-          />
-        </label>
-        <br />
-        <label>
-          Skin Type:
-          <select name="skinType" value={formData.skinType} onChange={handleChange} required>
-            <option value="">Select...</option>
-            <option value="dry">Dry</option>
-            <option value="oily">Oily</option>
-            <option value="combination">Combination</option>
-            <option value="sensitive">Sensitive</option>
-          </select>
-        </label>
-        <br />
-        <label>
-          Price Range:
-          <select name="priceRange" value={formData.priceRange} onChange={handleChange} required>
-            <option value="">Select...</option>
-            <option value="low">Low ($0-$20)</option>
-            <option value="medium">Medium ($20-$50)</option>
-            <option value="high">High ($50+)</option>
-          </select>
-        </label>
-        <br />
-        <label>
-          Product Type:
-          <select name="productType" value={formData.productType} onChange={handleChange} required>
-            <option value="">Select...</option>
-            <option value="moisturizer">Moisturizer</option>
-            <option value="cleanser">Cleanser</option>
-            <option value="sunscreen">Sunscreen</option>
-            <option value="serum">Serum</option>
-          </select>
-        </label>
-        <br />
-        <button type="submit" style={{ marginTop: "10px" }}>
-          Get Recommendations
-        </button>
-      </form>
+  const renderStep = () => {
+    switch (step) {
+      case 1:
+        return (
+          <div className="slide">
+            <h2>What is your age group?</h2>
+            <div className="options-container">
+              <div
+                className="option-box"
+                onClick={() => handleSelect("ageGroup", "Below 18")}
+              >
+                <img src="/images/teen.png" alt="Below 18" />
+                <p>Below 18</p>
+              </div>
+              <div
+                className="option-box"
+                onClick={() => handleSelect("ageGroup", "18-25")}
+              >
+                <img src="/images/young.png" alt="18-25" />
+                <p>18-25</p>
+              </div>
+              <div
+                className="option-box"
+                onClick={() => handleSelect("ageGroup", "26-35")}
+              >
+                <img src="/images/adult.png" alt="26-35" />
+                <p>26-35</p>
+              </div>
+              <div
+                className="option-box"
+                onClick={() => handleSelect("ageGroup", "36-45")}
+              >
+                <img src="/images/mature.png" alt="36-45" />
+                <p>36-45</p>
+              </div>
+              <div
+                className="option-box"
+                onClick={() => handleSelect("ageGroup", "Above 45")}
+              >
+                <img src="/images/senior.png" alt="Above 45" />
+                <p>Above 45</p>
+              </div>
+            </div>
+          </div>
+        );
+      case 2:
+        return (
+          <div className="slide">
+            <h2>What is your skin type?</h2>
+            <div className="options-container">
+              <div
+                className="option-box"
+                onClick={() => handleSelect("skinType", "Normal")}
+              >
+                <img src="/images/normal.png" alt="Normal" />
+                <p>Normal</p>
+              </div>
+              <div
+                className="option-box"
+                onClick={() => handleSelect("skinType", "Dry")}
+              >
+                <img src="/images/dry.png" alt="Dry" />
+                <p>Dry</p>
+              </div>
+              <div
+                className="option-box"
+                onClick={() => handleSelect("skinType", "Oily")}
+              >
+                <img src="/images/oily.png" alt="Oily" />
+                <p>Oily</p>
+              </div>
+              <div
+                className="option-box"
+                onClick={() => handleSelect("skinType", "Combination")}
+              >
+                <img src="/images/combination.png" alt="Combination" />
+                <p>Combination</p>
+              </div>
+              <div
+                className="option-box"
+                onClick={() => handleSelect("skinType", "Sensitive")}
+              >
+                <img src="/images/sensitive.png" alt="Sensitive" />
+                <p>Sensitive</p>
+              </div>
+            </div>
+            <button onClick={previousStep}>Back</button>
+          </div>
+        );
+      case 3:
+        return (
+          <div className="slide">
+            <h2>What is your price range?</h2>
+            <div className="options-container">
+              <div
+                className="option-box"
+                onClick={() => handleSelect("priceRange", "$10-$20")}
+              >
+                <p>$10-$20</p>
+              </div>
+              <div
+                className="option-box"
+                onClick={() => handleSelect("priceRange", "$20-$50")}
+              >
+                <p>$20-$50</p>
+              </div>
+              <div
+                className="option-box"
+                onClick={() => handleSelect("priceRange", "$50-$100")}
+              >
+                <p>$50-$100</p>
+              </div>
+              <div
+                className="option-box"
+                onClick={() => handleSelect("priceRange", "$100+")}
+              >
+                <p>$100+</p>
+              </div>
+            </div>
+            <button onClick={previousStep}>Back</button>
+          </div>
+        );
+      case 4:
+        return (
+          <div className="slide">
+            <h2>What type of product are you looking for?</h2>
+            <div className="options-container">
+              <div
+                className="option-box"
+                onClick={() => handleSelect("productType", "Cleanser")}
+              >
+                <img src="/images/cleanser.png" alt="Cleanser" />
+                <p>Cleanser</p>
+              </div>
+              <div
+                className="option-box"
+                onClick={() => handleSelect("productType", "Moisturizer")}
+              >
+                <img src="/images/moisturizer.png" alt="Moisturizer" />
+                <p>Moisturizer</p>
+              </div>
+              <div
+                className="option-box"
+                onClick={() => handleSelect("productType", "Serum")}
+              >
+                <img src="/images/serum.png" alt="Serum" />
+                <p>Serum</p>
+              </div>
+              <div
+                className="option-box"
+                onClick={() => handleSelect("productType", "Sunscreen")}
+              >
+                <img src="/images/sunscreen.png" alt="Sunscreen" />
+                <p>Sunscreen</p>
+              </div>
+            </div>
+            <button onClick={previousStep}>Back</button>
+          </div>
+        );
+      case 5:
+        return (
+          <div className="slide">
+            <h2>Your Perfect Product</h2>
+            <p>
+              Based on your answers:
+              <br />
+              <strong>Age Group:</strong> {answers.ageGroup}
+              <br />
+              <strong>Skin Type:</strong> {answers.skinType}
+              <br />
+              <strong>Price Range:</strong> {answers.priceRange}
+              <br />
+              <strong>Product Type:</strong> {answers.productType}
+            </p>
+            <button onClick={previousStep}>Back</button>
+          </div>
+        );
+      default:
+        return null;
+    }
+  };
 
-      {/* Display Recommendations */}
-      {recommendations.length > 0 && (
-        <div style={{ marginTop: "20px" }}>
-          <h2>Your Recommendations</h2>
-          <ul>
-            {recommendations.map((item, index) => (
-              <li key={index}>
-                <strong>{item.productName}</strong> - {item.brandName} (${item.price})
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
-    </div>
-  );
+  return <div className="get-to-know-container">{renderStep()}</div>;
 };
 
 export default GetToKnowYourself;
