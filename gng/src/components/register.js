@@ -1,6 +1,8 @@
 // src/components/Register.js
 import React, { useState } from "react";
 
+import './registerstyle.css'
+
 const Register = () => {
   const [formData, setFormData] = useState({
     fullname: "",

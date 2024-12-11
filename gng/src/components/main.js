@@ -1,16 +1,16 @@
 import { useState } from "react";
-import home from "./Home";
-import NavBar from "./NavBar";
-import LoginForm from "./LoginForm";
-import RegistrationForm from "./RegistrationForm";
+import Home from "./home";
+import NavBar from "./Navbar";
+import Login from "./login";
+import Register from "./register";
 
 const Main = () => {
   const [page, setPage] = useState("home");
 
   let currentPage;
   if (page === "home") currentPage = <Home />;
-  else if (page === "login") currentPage = <LoginForm navigate={setPage} />;
-  else if (page === "register") currentPage = <RegistrationForm navigate={setPage} />;
+  else if (page === "login") currentPage = <Login navigate={setPage} />;
+  else if (page === "register") currentPage = <Register navigate={setPage} />;
 
   return (
     <div>
