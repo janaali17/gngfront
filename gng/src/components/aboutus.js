@@ -6,10 +6,8 @@ const AboutUs = () => {
     <div style={{ padding: "20px", fontFamily: "Arial, sans-serif" }}>
       <h1>About Glow and Grace</h1>
       <p>
-        Welcome to Glow and Grace, your one-stop destination for all things skincare.
-        Our mission is to help you embrace your natural beauty by providing expert
-        advice, personalized skincare recommendations, and a seamless way to connect
-        with dermatologists.
+        Welcome to Glow and Grace, your one step away to get the perfect.
+        
       </p>
       <p>
         At Glow and Grace, we believe in empowering individuals to take care of their
