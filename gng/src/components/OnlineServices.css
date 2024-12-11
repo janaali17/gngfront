@@ -1,0 +1,28 @@
+/* OnlineServices.css */
+.faq-container {
+    text-align: center;
+    margin: 20px auto;
+    width: 80%;
+    max-width: 500px;
+    background-color: #f8f9fa; /* Light neutral */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .faq-item h3 {
+    cursor: pointer;
+    color: #414942; /* Deep green */
+    margin-bottom: 10px;
+  }
+  
+  .faq-item h3:hover {
+    color: #C79B7B; /* Pink */
+  }
+  
+  .faq-item p {
+    color: #414942;
+    background-color: #FDF7F3; /* Light beige */
+    padding: 10px;
+    border-radius: 5px;
+  }

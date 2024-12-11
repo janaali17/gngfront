@@ -1,77 +1,42 @@
 /* NavBar.css */
 .navbar {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    position: relative;
-  }
-  
-  .hamburger {
-    background: none;
-    border: none;
-    font-size: 20px;
-    cursor: pointer;
-    color: #414942; /* Deep green */
-  }
-  
-  .dropdown-menu {
-    position: absolute;
-    top: 40px;
-    left: 10px;
-    background: #c79b7b; /* Warm beige */
-    border: 1px solid #805d3e; /* Earthy brown */
-    padding: 10px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    z-index: 1000;
-    width: 200px; /* Fixed width for consistency */
-  }
-  
-  .dropdown-menu > button {
-    background: none;
-    border: none;
-    color: #414942; /* Deep green */
-    padding: 10px;
-    text-align: left;
-    cursor: pointer;
-    width: 100%;
-  }
-  
-  .dropdown-menu > button:hover {
-    background: #aec1c3; /* Light neutral on hover */
-    color: #805d3e; /* Earthy brown on hover */
-  }
-  
-  .submenu {
-    display: flex;
-    flex-direction: column; /* Vertical alignment */
-    background: #aec1c3; /* Light neutral background for submenu */
-    padding: 10px;
-    border: 1px solid #805d3e;
-  }
-  
-  .submenu > button {
-    background: none;
-    border: none;
-    color: #414942; /* Deep green for text */
-    padding: 10px;
-    text-align: left;
-    cursor: pointer;
-  }
-  
-  .submenu > button:hover {
-    background: #c79b7b; /* Warm beige on hover */
-    color: #805d3e; /* Earthy brown on hover */
-  }
-  
-  .back-button {
-    background: none;
-    border: none;
-    color: #805d3e; /* Earthy brown */
-    font-weight: bold;
-    padding: 10px;
-    cursor: pointer;
-  }
-  
-  .back-button:hover {
-    color: #c79b7b; /* Warm beige on hover */
-  }
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  position: relative;
+}
+
+.hamburger {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #414942; /* Deep green */
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 40px;
+  left: 10px;
+  background: #c79b7b; /* Pink */
+  border: 1px solid #805d3e; /* Earthy brown */
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  width: 200px;
+}
+
+.dropdown-menu > button {
+  background: none;
+  border: none;
+  color: #414942; /* Deep green */
+  padding: 10px;
+  text-align: left;
+  cursor: pointer;
+  width: 100%;
+}
+
+.dropdown-menu > button:hover {
+  background: #aec1c3; /* Light neutral on hover */
+  color: #805d3e; /* Earthy brown on hover */
+}

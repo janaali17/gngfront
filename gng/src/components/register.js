@@ -1,16 +1,14 @@
-// src/components/Register.js
 import React, { useState } from "react";
-
-import './registerstyle.css'
+import "./Register.css";
 
 const Register = () => {
   const [formData, setFormData] = useState({
-    fullname: "",
+    fullName: "",
     email: "",
-    number: "",
-    address: "",
     username: "",
     password: "",
+    address: "",
+    phoneNumber: "",
   });
 
   const handleChange = (e) => {
@@ -19,102 +17,72 @@ const Register = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    // API call to handle user registration
-    fetch("http://localhost:1784/user/register", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(formData),
-    })
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error("Registration failed");
-        }
-        return response.json();
-      })
-      .then((data) => {
-        alert("Registration successful!");
-        console.log(data); // You can redirect the user to the login page after this
-      })
-      .catch((err) => {
-        console.error(err);
-        alert("Registration failed. Please try again.");
-      });
+    alert("Account Created Successfully!");
+    console.log(formData); // You can send this data to your backend here
   };
 
   return (
-    <div style={{ padding: "20px", fontFamily: "Arial, sans-serif" }}>
-      <h1>Register</h1>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Full Name:
+    <div className="register-container">
+      <div className="register-form">
+        <h1>Create Your Account</h1>
+        <p>Join Glow in Grace to start your skincare journey!</p>
+        <form onSubmit={handleSubmit}>
+          <label>Full Name</label>
           <input
             type="text"
-            name="fullname"
-            value={formData.fullname}
+            name="fullName"
+            value={formData.fullName}
             onChange={handleChange}
+            placeholder="Enter your full name"
             required
           />
-        </label>
-        <br />
-        <label>
-          Email:
+          <label>Email</label>
           <input
             type="email"
             name="email"
             value={formData.email}
             onChange={handleChange}
+            placeholder="Enter your email"
             required
           />
-        </label>
-        <br />
-        <label>
-          Phone Number:
-          <input
-            type="text"
-            name="number"
-            value={formData.number}
-            onChange={handleChange}
-            required
-          />
-        </label>
-        <br />
-        <label>
-          Address:
-          <input
-            type="text"
-            name="address"
-            value={formData.address}
-            onChange={handleChange}
-          />
-        </label>
-        <br />
-        <label>
-          Username:
+          <label>Username</label>
           <input
             type="text"
             name="username"
             value={formData.username}
             onChange={handleChange}
+            placeholder="Choose a username"
             required
           />
-        </label>
-        <br />
-        <label>
-          Password:
+          <label>Password</label>
           <input
             type="password"
             name="password"
             value={formData.password}
             onChange={handleChange}
+            placeholder="Create a password"
             required
           />
-        </label>
-        <br />
-        <button type="submit" style={{ marginTop: "10px" }}>
-          Register
-        </button>
-      </form>
+          <label>Address</label>
+          <input
+            type="text"
+            name="address"
+            value={formData.address}
+            onChange={handleChange}
+            placeholder="Enter your address"
+          />
+          <label>Phone Number</label>
+          <input
+            type="text"
+            name="phoneNumber"
+            value={formData.phoneNumber}
+            onChange={handleChange}
+            placeholder="Enter your phone number"
+            required
+          />
+          <button type="submit">Sign Up</button>
+        </form>
+      </div>
     </div>
   );
 };

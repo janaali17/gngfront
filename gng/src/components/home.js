@@ -4,7 +4,7 @@ import React from "react";
 const Home = () => {
   return (
     <div style={{ padding: "20px", fontFamily: "Arial, sans-serif", textAlign: "center" }}>
-      <h1>Welcome to Glow and Grace</h1>
+      <h1>Welcome to Glow in Grace</h1>
       <p>
         Your one-stop solution for personalized skincare recommendations, dermatologist
         appointments, and finding the best skincare products. Let us help you embrace

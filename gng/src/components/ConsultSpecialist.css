@@ -1,0 +1,42 @@
+/* ConsultSpecialist.css */
+.consult-container {
+    text-align: center;
+    margin: 20px auto;
+    width: 80%;
+    max-width: 500px;
+    background-color: #fdf7f3; /* Light beige background */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .consult-form label {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    color: #414942; /* Deep green */
+  }
+  
+  input,
+  select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #C79B7B; /* Pink border */
+    border-radius: 5px;
+  }
+  
+  button {
+    padding: 10px;
+    background-color: #C79B7B; /* Pink button */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+  }
+  
+  button:hover {
+    background-color: #805D3E; /* Earthy brown */
+  }
