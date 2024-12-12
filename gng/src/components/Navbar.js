@@ -1,58 +1,49 @@
-import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import "./NavBar.css";
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import './NavBar.css'; // Ensure you have the correct CSS file linked
+import { FaHome, FaUser, FaProductHunt, FaConciergeBell, FaCommentAlt, FaLocationArrow } from 'react-icons/fa';
 
-const NavBar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false); // Toggle main menu
-  const [activeSubMenu, setActiveSubMenu] = useState(null); // Track open submenu
-  const navigate = useNavigate();
-
-  const toggleSubMenu = (menu) => {
-    setActiveSubMenu(activeSubMenu === menu ? null : menu);
-  };
+const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <nav className="navbar">
       {/* Hamburger Menu */}
       <button className="hamburger" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-        &#9776; {/* Hamburger Icon */}
+        ☰
       </button>
+
+      {/* App Name */}
+      <h1 className="app-name">Glow in Grace</h1>
+
+      {/* Log In/Sign Up Links */}
+      <div className="auth-links">
+        <Link to="/login">Log In</Link>
+        <Link to="/register">Sign Up</Link>
+      </div>
 
       {/* Dropdown Menu */}
       {isMenuOpen && (
         <div className="dropdown-menu">
-          {/* Main Menu */}
-          {activeSubMenu === null && (
-            <>
-              <button onClick={() => navigate("/login")}>Log In</button>
-              <button onClick={() => navigate("/register")}>Sign Up</button>
-              <button onClick={() => toggleSubMenu("services")}>Services</button>
-              <button onClick={() => navigate("/gettoknowyourself")}>
-                Get to Know Yourself Better
-              </button>
-              <button onClick={() => navigate("/feedback")}>Feedback</button>
-              <button onClick={() => navigate("/locate-product")}>
-                Locate Product
-              </button>
-            </>
-          )}
-
-          {/* Services Submenu */}
-          {activeSubMenu === "services" && (
-            <>
-              <button onClick={() => navigate("/consult-specialist")}>
-                Consult a Specialist
-              </button>
-              <button onClick={() => navigate("/online-services")}>
-                Online Services
-              </button>
-              <button onClick={() => setActiveSubMenu(null)}>Back</button>
-            </>
-          )}
+          <Link to="/" className="menu-item">
+            <FaHome className="menu-icon" /> Home
+          </Link>
+          <Link to="/services" className="menu-item">
+            <FaConciergeBell className="menu-icon" /> Services
+          </Link>
+          <Link to="/gettoknowyourself" className="menu-item">
+            <FaUser className="menu-icon" /> Get to Know Yourself Better
+          </Link>
+          <Link to="/feedback" className="menu-item">
+            <FaCommentAlt className="menu-icon" /> Feedback
+          </Link>
+          <Link to="/locate-product" className="menu-item">
+            <FaLocationArrow className="menu-icon" /> Locate Product
+          </Link>
         </div>
       )}
     </nav>
   );
 };
 
-export default NavBar;
+export default Navbar;

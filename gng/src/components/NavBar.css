@@ -1,42 +1,74 @@
-/* NavBar.css */
+/* Navbar Container */
 .navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #c79b7b; /* Your theme's brown shade */
+  color: white;
+}
+
+/* Hamburger Button */
+.hamburger {
+  font-size: 24px;
+  border: none;
+  background: none;
+  color: white;
+  cursor: pointer;
+}
+
+/* App Name */
+.app-name {
+  font-size: 24px;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+/* Auth Links */
+.auth-links a {
+  margin-right: 15px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+.auth-links a:hover {
+  color: #a37a61;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  position: absolute;
+  top: 60px;
+  left: 10px;
+  background-color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  width: 200px;
+  padding: 10px;
+}
+
+.menu-item {
   display: flex;
   align-items: center;
   padding: 10px;
-  position: relative;
+  font-size: 16px;
+  text-decoration: none;
+  color: #5d4037; /* Dark brown text */
+  font-weight: bold;
+  border-bottom: 1px solid #f2f2f2;
 }
 
-.hamburger {
-  background: none;
-  border: none;
-  font-size: 20px;
-  cursor: pointer;
-  color: #414942; /* Deep green */
+.menu-item:last-child {
+  border-bottom: none;
 }
 
-.dropdown-menu {
-  position: absolute;
-  top: 40px;
-  left: 10px;
-  background: #c79b7b; /* Pink */
-  border: 1px solid #805d3e; /* Earthy brown */
-  padding: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-  width: 200px;
+.menu-item:hover {
+  background-color: #f7f0eb; /* Light beige hover effect */
+  color: #c79b7b;
 }
 
-.dropdown-menu > button {
-  background: none;
-  border: none;
-  color: #414942; /* Deep green */
-  padding: 10px;
-  text-align: left;
-  cursor: pointer;
-  width: 100%;
-}
-
-.dropdown-menu > button:hover {
-  background: #aec1c3; /* Light neutral on hover */
-  color: #805d3e; /* Earthy brown on hover */
+.menu-icon {
+  margin-right: 10px;
+  font-size: 18px;
 }

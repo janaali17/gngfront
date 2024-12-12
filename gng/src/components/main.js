@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Home from "./home";
 import NavBar from "./navbar";
-import Login from "./Login";
+import Login from "./login";
 import Register from "./register";
 
 const Main = () => {
