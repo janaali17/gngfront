@@ -40,6 +40,7 @@ const Navbar = () => {
           <Link to="/locate-product" className="menu-item">
             <FaLocationArrow className="menu-icon" /> Locate Product
           </Link>
+          
         </div>
       )}
     </nav>
