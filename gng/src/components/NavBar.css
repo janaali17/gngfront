@@ -1,49 +1,42 @@
-/* Navbar Container */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: #c79b7b;
   padding: 10px 20px;
-  background-color: #c79b7b; /* Your theme's brown shade */
   color: white;
 }
 
-/* Hamburger Button */
-.hamburger {
-  font-size: 24px;
-  border: none;
+.menu-toggle {
   background: none;
+  border: none;
+  font-size: 1.5rem;
   color: white;
   cursor: pointer;
 }
 
-/* App Name */
-.app-name {
-  font-size: 24px;
-  font-weight: bold;
-  margin-left: 10px;
+.navbar-title {
+  font-size: 1.2rem;
 }
 
-/* Auth Links */
-.auth-links a {
-  margin-right: 15px;
-  text-decoration: none;
+.nav-right .nav-link {
+  margin-left: 15px;
   color: white;
-  font-weight: bold;
+  text-decoration: none;
+  font-size: 1rem;
 }
 
-.auth-links a:hover {
-  color: #a37a61;
+.nav-right .nav-link:hover {
+  text-decoration: underline;
 }
 
-/* Dropdown Menu */
 .dropdown-menu {
   position: absolute;
-  top: 60px;
+  top: 50px;
   left: 10px;
-  background-color: white;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #f5f5f5;
   border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   width: 200px;
   padding: 10px;
 }
@@ -52,23 +45,32 @@
   display: flex;
   align-items: center;
   padding: 10px;
-  font-size: 16px;
+  font-size: 1rem;
+  color: #333;
   text-decoration: none;
-  color: #5d4037; /* Dark brown text */
-  font-weight: bold;
-  border-bottom: 1px solid #f2f2f2;
-}
-
-.menu-item:last-child {
-  border-bottom: none;
+  cursor: pointer;
 }
 
 .menu-item:hover {
-  background-color: #f7f0eb; /* Light beige hover effect */
-  color: #c79b7b;
+  background-color: #c79b7b;
+  color: white;
 }
 
-.menu-icon {
-  margin-right: 10px;
-  font-size: 18px;
+.submenu {
+  margin-top: 5px;
+  background-color: #eee;
+  padding-left: 10px;
+  border-left: 2px solid #c79b7b;
+}
+
+.submenu-item {
+  display: block;
+  padding: 5px 0;
+  color: #333;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.submenu-item:hover {
+  color: #c79b7b;
 }
