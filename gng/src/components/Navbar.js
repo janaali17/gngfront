@@ -24,7 +24,6 @@ const NavBar = () => {
         &#9776; {/* Icon for the menu */}
       </button>
 
-  
       {/* Navbar links */}
       <div className={`navbar-links ${isMenuOpen ? "active" : ""}`}>
         {/* Home Link */}
@@ -42,14 +41,20 @@ const NavBar = () => {
               <NavLink
                 to="/services/consult-specialist"
                 className="dropdown-item"
-                onClick={toggleMenu}
+                onClick={() => {
+                  toggleMenu();
+                  toggleSubmenu();
+                }}
               >
                 Consult a Specialist
               </NavLink>
               <NavLink
                 to="/services/online-services"
                 className="dropdown-item"
-                onClick={toggleMenu}
+                onClick={() => {
+                  toggleMenu();
+                  toggleSubmenu();
+                }}
               >
                 Online Services
               </NavLink>
@@ -71,7 +76,7 @@ const NavBar = () => {
         <NavLink to="/login" className="nav-link" onClick={toggleMenu}>
           Log In
         </NavLink>
-        <NavLink to="/signup" className="nav-link" onClick={toggleMenu}>
+        <NavLink to="/register" className="nav-link" onClick={toggleMenu}>
           Sign Up
         </NavLink>
       </div>
