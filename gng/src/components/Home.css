@@ -1,59 +1,47 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+}
+
 .home-container {
   text-align: center;
-  padding: 20px;
-  background-color: #fdf5f5;
+  margin-top: 60px;
 }
 
-.home-header h1 {
-  font-size: 2.5rem;
-  color: #c79b7b;
+.home-background {
+  width: 100%;
+  opacity: 0.9;
 }
 
-.home-header p {
-  font-size: 1.2rem;
-  margin: 10px 0 20px;
+.home-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
 }
 
-.get-started-button {
+.home-buttons button {
+  margin: 10px;
+  padding: 10px 20px;
   background-color: #c79b7b;
   color: white;
-  padding: 10px 20px;
   border: none;
   border-radius: 5px;
-  font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s;
 }
 
-.get-started-button:hover {
-  background-color: #a37a61;
+.home-buttons button:hover {
+  background-color: #b08269;
 }
 
-.home-options {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  flex-wrap: wrap;
-  margin: 20px 0;
-}
-
-.home-options button {
-  background-color: #d8c3b5;
-  padding: 15px 25px;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  transition: transform 0.2s, background-color 0.3s;
-}
-
-.home-options button:hover {
-  transform: scale(1.05);
-  background-color: #c79b7b;
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #333;
   color: white;
-}
-
-.home-footer {
-  margin-top: 30px;
-  font-size: 0.9rem;
-  color: #555;
+  padding: 10px 0;
+  text-align: center;
 }

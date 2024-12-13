@@ -1,50 +1,87 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import './NavBar.css'; // Ensure you have the correct CSS file linked
-import { FaHome, FaUser, FaProductHunt, FaConciergeBell, FaCommentAlt, FaLocationArrow } from 'react-icons/fa';
+import React, { useState } from "react";
+import { NavLink } from "react-router-dom";
+import "./NavBar.css";
 
-const Navbar = () => {
+const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
+
+  // Toggle the main menu
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+    setIsSubmenuOpen(false); // Close submenu when toggling the main menu
+  };
+
+  // Toggle the Services submenu
+  const toggleSubmenu = () => {
+    setIsSubmenuOpen(!isSubmenuOpen);
+  };
 
   return (
     <nav className="navbar">
-      {/* Hamburger Menu */}
-      <button className="hamburger" onClick={() => setIsMenuOpen(!isMenuOpen)}>
-        ☰
+      {/* Hamburger menu button */}
+      <button className="menu-toggle" onClick={toggleMenu}>
+        &#9776; {/* Icon for the menu */}
       </button>
 
-      {/* App Name */}
-      <h1 className="app-name">Glow in Grace</h1>
+      {/* Navbar links */}
+      <div className={`navbar-links ${isMenuOpen ? "active" : ""}`}>
+        {/* Home Link */}
+        <NavLink to="/" className="nav-link" onClick={toggleMenu}>
+          Home
+        </NavLink>
 
-      {/* Log In/Sign Up Links */}
-      <div className="auth-links">
-        <Link to="/login">Log In</Link>
-        <Link to="/register">Sign Up</Link>
+        {/* Services Dropdown */}
+        <div className="dropdown">
+          <button className="dropdown-toggle" onClick={toggleSubmenu}>
+            Services
+          </button>
+          {isSubmenuOpen && (
+            <div className="dropdown-menu">
+              <NavLink
+                to="/services/consult-specialist"
+                className="dropdown-item"
+                onClick={() => {
+                  toggleMenu();
+                  toggleSubmenu();
+                }}
+              >
+                Consult a Specialist
+              </NavLink>
+              <NavLink
+                to="/services/online-services"
+                className="dropdown-item"
+                onClick={() => {
+                  toggleMenu();
+                  toggleSubmenu();
+                }}
+              >
+                Online Services
+              </NavLink>
+            </div>
+          )}
+        </div>
+
+        {/* Additional Links */}
+        <NavLink to="/gettoknowyourself" className="nav-link" onClick={toggleMenu}>
+          Get to Know Yourself Better
+        </NavLink>
+        <NavLink to="/locate-product" className="nav-link" onClick={toggleMenu}>
+          Locate a Product
+        </NavLink>
       </div>
 
-      {/* Dropdown Menu */}
-      {isMenuOpen && (
-        <div className="dropdown-menu">
-          <Link to="/" className="menu-item">
-            <FaHome className="menu-icon" /> Home
-          </Link>
-          <Link to="/services" className="menu-item">
-            <FaConciergeBell className="menu-icon" /> Services
-          </Link>
-          <Link to="/gettoknowyourself" className="menu-item">
-            <FaUser className="menu-icon" /> Get to Know Yourself Better
-          </Link>
-          <Link to="/feedback" className="menu-item">
-            <FaCommentAlt className="menu-icon" /> Feedback
-          </Link>
-          <Link to="/locate-product" className="menu-item">
-            <FaLocationArrow className="menu-icon" /> Locate Product
-          </Link>
-          
-        </div>
-      )}
+      {/* Login and Sign Up Links */}
+      <div className="navbar-right">
+        <NavLink to="/login" className="nav-link" onClick={toggleMenu}>
+          Log In
+        </NavLink>
+        <NavLink to="/register" className="nav-link" onClick={toggleMenu}>
+          Sign Up
+        </NavLink>
+      </div>
     </nav>
   );
 };
 
-export default Navbar;
+export default NavBar;
