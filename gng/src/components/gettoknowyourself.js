@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./GetToKnowYourself.css";
+import products from "../data/products"; // Import the product list
 
 const GetToKnowYourself = () => {
   const [step, setStep] = useState(1); // Track the current slide
@@ -9,6 +10,7 @@ const GetToKnowYourself = () => {
     priceRange: "",
     productType: "",
   });
+  const [recommendation, setRecommendation] = useState(""); // For storing the recommendation
 
   const handleSelect = (field, value) => {
     setAnswers({ ...answers, [field]: value });
@@ -18,6 +20,25 @@ const GetToKnowYourself = () => {
   const previousStep = () => {
     setStep(step - 1);
   };
+
+  // Calculate recommendation when transitioning to step 5
+  useEffect(() => {
+    if (step === 5) {
+      const matchedProduct = products.find(
+        (product) =>
+          product.ageGroup === answers.ageGroup &&
+          product.skinType === answers.skinType &&
+          product.priceRange === answers.priceRange &&
+          product.productType === answers.productType
+      );
+
+      if (matchedProduct && matchedProduct.name) {
+        setRecommendation(matchedProduct.name);
+      } else {
+        setRecommendation("No matching product found. Try adjusting your answers!");
+      }
+    }
+  }, [step, answers]); // Re-run only when step or answers change
 
   const renderStep = () => {
     switch (step) {
@@ -192,6 +213,8 @@ const GetToKnowYourself = () => {
               <strong>Price Range:</strong> {answers.priceRange}
               <br />
               <strong>Product Type:</strong> {answers.productType}
+              <br />
+              <strong>Recommendation:</strong> {recommendation}
             </p>
             <button onClick={previousStep}>Back</button>
           </div>
