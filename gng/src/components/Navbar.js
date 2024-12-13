@@ -4,17 +4,10 @@ import "./NavBar.css";
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
 
   // Toggle the main menu
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-    setIsSubmenuOpen(false); // Close submenu when toggling the main menu
-  };
-
-  // Toggle the Services submenu
-  const toggleSubmenu = () => {
-    setIsSubmenuOpen(!isSubmenuOpen);
   };
 
   return (
@@ -26,46 +19,26 @@ const NavBar = () => {
 
       {/* Navbar links */}
       <div className={`navbar-links ${isMenuOpen ? "active" : ""}`}>
-        {/* Home Link */}
         <NavLink to="/" className="nav-link" onClick={toggleMenu}>
           Home
         </NavLink>
 
-        {/* Services Dropdown */}
-        <div className="dropdown">
-          <button className="dropdown-toggle" onClick={toggleSubmenu}>
-            Services
-          </button>
-          {isSubmenuOpen && (
-            <div className="dropdown-menu">
-              <NavLink
-                to="/services/consult-specialist"
-                className="dropdown-item"
-                onClick={() => {
-                  toggleMenu();
-                  toggleSubmenu();
-                }}
-              >
-                Consult a Specialist
-              </NavLink>
-              <NavLink
-                to="/services/online-services"
-                className="dropdown-item"
-                onClick={() => {
-                  toggleMenu();
-                  toggleSubmenu();
-                }}
-              >
-                Online Services
-              </NavLink>
-            </div>
-          )}
-        </div>
+        <NavLink to="/services/consult-specialist" className="nav-link" onClick={toggleMenu}>
+          Consult a Specialist
+        </NavLink>
 
-        {/* Additional Links */}
+        <NavLink to="/services/online-services" className="nav-link" onClick={toggleMenu}>
+          Online Services
+        </NavLink>
+
+        <NavLink to="/feedback" className="nav-link" onClick={toggleMenu}>
+          Feedback
+        </NavLink>
+
         <NavLink to="/gettoknowyourself" className="nav-link" onClick={toggleMenu}>
           Get to Know Yourself Better
         </NavLink>
+
         <NavLink to="/locate-product" className="nav-link" onClick={toggleMenu}>
           Locate a Product
         </NavLink>

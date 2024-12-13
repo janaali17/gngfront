@@ -1,6 +1,6 @@
 /* Background for the login page */
 body {
-  background-image: url("../images/logback.jpg"); /* Reference your background image */
+  background-image: url("../images/logback.jpg");
   background-size: cover; /* Cover the entire viewport */
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Prevent repetition */
@@ -22,13 +22,15 @@ body::before {
 
 .login-container {
   max-width: 400px;
-  margin: 50px auto;
   padding: 20px;
   background-color: #f5f5f5;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   text-align: center;
-  position: relative; /* Ensure it sits above the overlay */
+  position: absolute; /* Make the container independent for centering */
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Adjust for perfect centering */
   z-index: 1; /* Ensure it stays above the background overlay */
 }
 
@@ -62,18 +64,19 @@ body::before {
 }
 
 .form-group input {
-  width: 100%;
+  width: calc(100% - 20px); /* Adjust width to account for padding */
   padding: 10px;
   font-size: 14px;
   border: 1px solid #c79b7b;
   border-radius: 5px;
+  box-sizing: border-box; /* Include padding and border in width */
 }
 
 .form-group input:focus {
   outline: none;
   border-color: #aec1c3; /* Light pink highlight */
+  box-shadow: 0 0 5px rgba(174, 193, 195, 0.5); /* Subtle focus glow */
 }
-
 .login-button {
   background-color: #c79b7b; /* Your theme's pink shade */
   color: white;

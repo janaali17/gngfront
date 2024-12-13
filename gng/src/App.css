@@ -22,6 +22,7 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  padding-top: 70px; /* Ensures the header starts below the navbar */
 }
 
 .App-link {
@@ -35,4 +36,20 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/* Added fixes for the navbar overlap issue */
+body {
+  margin: 0;
+  padding-top: 70px; /* Match this value to the height of your navbar */
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  height: 70px; /* Ensure consistent height */
+  background-color: rgba(199, 155, 123, 0.8); /* Adjust as per your theme */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for aesthetics */
 }

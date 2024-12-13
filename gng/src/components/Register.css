@@ -1,74 +1,80 @@
 /* Register.css */
+
 body {
-    margin: 0;
-    padding: 0;
-    font-family: "Arial", sans-serif;
-    background-image: url("https://example.com/signup-background.jpg"); /* Replace with your image URL */
-    background-size: cover;
-    background-position: center;
-  }
-  
-  .register-container {
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    height: 100vh; /* Full height of the viewport */
-  }
-  
-  .register-form {
-    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
-    padding: 20px 40px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    text-align: center;
-    width: 300px; /* Fixed width for consistency */
-  }
-  
-  h1 {
-    color: #C79B7B; /* Pink */
-    margin-bottom: 10px;
-  }
-  
-  p {
-    color: #414942; /* Deep green */
-    margin-bottom: 20px;
-  }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  label {
-    color: #414942;
-    margin-bottom: 5px;
-    text-align: left;
-    font-weight: bold;
-  }
-  
-  input {
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #C79B7B; /* Pink */
-    border-radius: 5px;
-  }
-  
-  input:focus {
-    outline: none;
-    border-color: #805D3E; /* Earthy brown */
-  }
-  
-  button {
-    padding: 10px;
-    background-color: #C79B7B; /* Pink */
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    font-weight: bold;
-  }
-  
-  button:hover {
-    background-color: #805D3E; /* Earthy brown */
-  }
+  margin: 0;
+  padding: 0;
+  font-family: "Arial", sans-serif;
+  background-image: url("https://example.com/signup-background.jpg"); /* Replace with your image URL */
+  background-size: cover;
+  background-position: center;
+}
+
+.register-container {
+  position: absolute; /* Center it */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto; /* Let the content define the height */
+  z-index: 10; /* Ensure it sits above the navbar */
+  background-color: rgba(255, 255, 255, 0.9); /* Preserve your styling */
+}
+.register-form {
+  background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+  padding: 20px 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 300px; /* Fixed width for consistency */
+}
+
+h1 {
+  color: #C79B7B; /* Pink */
+  margin-bottom: 10px;
+}
+
+p {
+  color: #414942; /* Deep green */
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  color: #414942;
+  margin-bottom: 5px;
+  text-align: left;
+  font-weight: bold;
+}
+
+input {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #C79B7B; /* Pink */
+  border-radius: 5px;
+}
+
+input:focus {
+  outline: none;
+  border-color: #805D3E; /* Earthy brown */
+}
+
+button {
+  padding: 10px;
+  background-color: #C79B7B; /* Pink */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #805D3E; /* Earthy brown */
+}
