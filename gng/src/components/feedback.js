@@ -6,6 +6,7 @@ const Feedback = () => {
     rating: "",
     comments: "",
   });
+  const [successMessage, setSuccessMessage] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -14,9 +15,21 @@ const Feedback = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    // Check if all fields are filled
+    if (!formData.rating || !formData.comments.trim()) {
+      alert("Please fill in all fields before submitting.");
+      return;
+    }
+
     console.log("Feedback Submitted:", formData);
-    alert("Thank you for your feedback!");
+    setSuccessMessage("Thank you for your feedback!");
     setFormData({ rating: "", comments: "" });
+
+    // Clear success message after 5 seconds
+    setTimeout(() => {
+      setSuccessMessage("");
+    }, 5000);
   };
 
   return (
@@ -56,6 +69,7 @@ const Feedback = () => {
           Submit
         </button>
       </form>
+      {successMessage && <p className="success-message">{successMessage}</p>}
     </div>
   );
 };

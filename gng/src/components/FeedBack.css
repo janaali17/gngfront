@@ -22,13 +22,15 @@ body::before {
 
 .feedback-container {
   max-width: 500px;
-  margin: 50px auto;
   padding: 20px;
   background-color: #f5f5f5;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
-  position: relative; /* Ensure it sits above the background */
+  position: absolute; /* Make the feedback box independent for centering */
+  top: 50%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Adjust for perfect centering */
   z-index: 1; /* Ensure it stays above the background overlay */
 }
 
@@ -76,4 +78,29 @@ body::before {
 
 .submit-button:hover {
   background-color: #ae8d6e;
+}
+
+/* Success message styling */
+.success-message {
+  margin-top: 15px;
+  font-size: 16px;
+  color: #28a745; /* Green for success */
+  font-weight: bold;
+  animation: fade-in-out 5s ease-in-out; /* Animation for fading */
+}
+
+/* Animation for success message */
+@keyframes fade-in-out {
+  0% {
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }
