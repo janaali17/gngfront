@@ -1,60 +1,82 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { FaHome, FaConciergeBell, FaUser, FaCommentAlt, FaLocationArrow, FaChevronDown } from "react-icons/fa";
+import { NavLink } from "react-router-dom";
 import "./NavBar.css";
 
-function Navbar() {
-  const [isMenuOpen, setMenuOpen] = useState(false);
-  const [isSubmenuOpen, setSubmenuOpen] = useState(false);
+const NavBar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
 
-  const toggleMenu = () => setMenuOpen(!isMenuOpen);
-  const toggleSubmenu = () => setSubmenuOpen(!isSubmenuOpen);
+  // Toggle the main menu
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+    setIsSubmenuOpen(false); // Close submenu when toggling the main menu
+  };
+
+  // Toggle the Services submenu
+  const toggleSubmenu = () => {
+    setIsSubmenuOpen(!isSubmenuOpen);
+  };
 
   return (
     <nav className="navbar">
+      {/* Hamburger menu button */}
       <button className="menu-toggle" onClick={toggleMenu}>
-        {isMenuOpen ? "✖" : "☰"}
+        &#9776; {/* Icon for the menu */}
       </button>
-      <h1 className="navbar-title">Glow in Grace</h1>
-      <div className="nav-right">
-        <Link to="/login" className="nav-link">
-          Log In
-        </Link>
-        <Link to="/register" className="nav-link">
-          Sign Up
-        </Link>
-      </div>
-      {isMenuOpen && (
-        <div className="dropdown-menu">
-          <Link to="/" className="menu-item">
-            <FaHome className="menu-icon" /> Home
-          </Link>
-          <div className="menu-item" onClick={toggleSubmenu}>
-            <FaConciergeBell className="menu-icon" /> Services <FaChevronDown className="submenu-icon" />
-          </div>
+
+  
+      {/* Navbar links */}
+      <div className={`navbar-links ${isMenuOpen ? "active" : ""}`}>
+        {/* Home Link */}
+        <NavLink to="/" className="nav-link" onClick={toggleMenu}>
+          Home
+        </NavLink>
+
+        {/* Services Dropdown */}
+        <div className="dropdown">
+          <button className="dropdown-toggle" onClick={toggleSubmenu}>
+            Services
+          </button>
           {isSubmenuOpen && (
-            <div className="submenu">
-              <Link to="/services/consult-specialist" className="submenu-item">
-                Consult Specialist
-              </Link>
-              <Link to="/services/online-services" className="submenu-item">
+            <div className="dropdown-menu">
+              <NavLink
+                to="/services/consult-specialist"
+                className="dropdown-item"
+                onClick={toggleMenu}
+              >
+                Consult a Specialist
+              </NavLink>
+              <NavLink
+                to="/services/online-services"
+                className="dropdown-item"
+                onClick={toggleMenu}
+              >
                 Online Services
-              </Link>
+              </NavLink>
             </div>
           )}
-          <Link to="/gettoknowyourself" className="menu-item">
-            <FaUser className="menu-icon" /> Get to Know Yourself Better
-          </Link>
-          <Link to="/feedback" className="menu-item">
-            <FaCommentAlt className="menu-icon" /> Feedback
-          </Link>
-          <Link to="/locate-product" className="menu-item">
-            <FaLocationArrow className="menu-icon" /> Locate Product
-          </Link>
         </div>
-      )}
+
+        {/* Additional Links */}
+        <NavLink to="/gettoknowyourself" className="nav-link" onClick={toggleMenu}>
+          Get to Know Yourself Better
+        </NavLink>
+        <NavLink to="/locate-product" className="nav-link" onClick={toggleMenu}>
+          Locate a Product
+        </NavLink>
+      </div>
+
+      {/* Login and Sign Up Links */}
+      <div className="navbar-right">
+        <NavLink to="/login" className="nav-link" onClick={toggleMenu}>
+          Log In
+        </NavLink>
+        <NavLink to="/signup" className="nav-link" onClick={toggleMenu}>
+          Sign Up
+        </NavLink>
+      </div>
     </nav>
   );
-}
+};
 
-export default Navbar;
+export default NavBar;
