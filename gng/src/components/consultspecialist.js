@@ -19,8 +19,8 @@ const ConsultSpecialist = () => {
   };
 
   return (
-    <div className="consult-specialist-container">
-      <div className="consult-container">
+    <div className="consult-container">
+      <div className="consult-content">
         <h1>Book Your Appointment</h1>
         <p>Select the options below to schedule your appointment.</p>
         <form onSubmit={handleSubmit} className="consult-form">
