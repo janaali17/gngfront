@@ -201,7 +201,11 @@ const GetToKnowYourself = () => {
     }
   };
 
-  return <div className="get-to-know-container">{renderStep()}</div>;
+  return (
+    <div className="get-to-know-yourself-container">
+      {renderStep()}
+    </div>
+  );
 };
 
 export default GetToKnowYourself;
