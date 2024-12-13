@@ -5,7 +5,10 @@ import background from "../images/background.webp";
 const Home = () => {
   return (
     <div className="home-container">
+      {/* Background Image */}
       <img src={background} alt="Background" className="home-background" />
+
+      {/* Main Content */}
       <div className="home-content">
         <h1>Glow in Grace</h1>
         <h2>Your personalized journey to radiant skincare starts here!</h2>
@@ -21,13 +24,15 @@ const Home = () => {
           </button>
         </div>
       </div>
-      <footer>
-        Glow in Grace is your trusted partner for personalized skincare.
-        <br />
-        <a href="/contact-us">Contact Us</a> | <a href="/faq">FAQ</a> |{" "}
-        <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-          Instagram
-        </a>
+
+      {/* Footer */}
+      <footer className="footer">
+        <p>Glow in Grace is your trusted partner for personalized skincare.</p>
+        <p>
+          <a href="/contact">Contact Us</a> | 
+          <a href="/faq">FAQ</a> | 
+          <a href="https://instagram.com">Instagram</a>
+        </p>
       </footer>
     </div>
   );

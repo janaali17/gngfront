@@ -1,47 +1,126 @@
+/* General Body Styles */
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  box-sizing: border-box;
+  padding: 0;
+  height: 100vh; /* Ensure the body spans the viewport height */
+  display: flex;
+  flex-direction: column; /* Stack the content and footer vertically */
+  font-family: 'Roboto', sans-serif;
+  background-color: #f8f0e3; /* Subtle chic background for luxury look */
 }
 
+/* Home Container */
 .home-container {
+  position: relative;
+  height: 100vh; /* Make the container span the full viewport */
   text-align: center;
-  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Ensure footer is at the bottom */
 }
 
+/* Background Image */
 .home-background {
-  width: 100%;
-  opacity: 0.9;
-}
-
-.home-content {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #fff;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Make the image fit without cropping */
+  z-index: -1; /* Place it behind other elements */
 }
 
+.home-container::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Subtle dark overlay for contrast */
+  z-index: 0;
+}
+
+/* Main Content */
+.home-content {
+  position: relative;
+  z-index: 1; /* Keep the content above the overlay */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end; /* Move content lower */
+  align-items: center;
+  color: #fff; /* White text for elegance */
+  text-align: center;
+  padding: 50px 20px; /* Add padding for responsiveness */
+  animation: fadeIn 1.5s ease; /* Add fade-in animation */
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.home-content h1 {
+  font-family: 'Playfair Display', serif; /* Elegant serif font */
+  font-size: 3rem; /* Large, bold heading */
+  font-weight: bold;
+  margin-bottom: 10px;
+  letter-spacing: 2px; /* Add spacing for a refined look */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Subtle shadow for luxury */
+}
+
+.home-content h2 {
+  font-family: 'Roboto', sans-serif; /* Modern sans-serif font */
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #f0e5d8; /* Softer shade for contrast */
+  margin-bottom: 30px;
+}
+
+/* Buttons */
 .home-buttons button {
-  margin: 10px;
-  padding: 10px 20px;
-  background-color: #c79b7b;
-  color: white;
+  margin: 20px; /* Add spacing between buttons */
+  padding: 15px 30px; /* Make buttons larger */
+  background-color: #c79b7b; /* Chic button color */
+  color: white; /* White text */
   border: none;
-  border-radius: 5px;
+  border-radius: 30px; /* Softer, rounded corners */
+  font-size: 1rem; /* Elegant font size */
+  font-weight: bold;
   cursor: pointer;
+  transition: all 0.3s ease; /* Smooth transitions */
 }
 
 .home-buttons button:hover {
-  background-color: #b08269;
+  background-color: #b08269; /* Slightly darker hover effect */
+  transform: scale(1.05); /* Subtle zoom-in on hover */
+  box-shadow: 0 0 15px rgba(199, 155, 123, 0.8); /* Add glow effect */
 }
 
-footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background-color: #333;
-  color: white;
-  padding: 10px 0;
+/* Footer */
+.footer {
+  background-color: #1c1c1c; /* Dark, elegant background */
+  color: #fff; /* White footer text */
+  padding: 20px;
+  font-size: 0.9rem;
   text-align: center;
+}
+
+.footer a {
+  color: #c79b7b; /* Chic link color */
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0 10px;
+  transition: color 0.3s ease;
+}
+
+.footer a:hover {
+  color: #b08269; /* Slightly darker hover color */
+  text-decoration: underline; /* Add underline on hover */
 }
