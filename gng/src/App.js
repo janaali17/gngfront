@@ -9,7 +9,8 @@ import NavBar from "./components/navbar";
 import "./App.css"; 
 import Login from "./components/login";
 import Register from "./components/register"; 
-
+import Feedback from './components/feedback';
+import Services from './components/services';
 
 const App = () => {
   return (
@@ -23,6 +24,8 @@ const App = () => {
         <Route path="/services/online-services" element={<OnlineServices />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/feedback" element={<Feedback />} /> 
+        <Route path="/services" element={<Services />} />
 
       </Routes>
     </Router>

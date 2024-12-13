@@ -1,0 +1,37 @@
+.services-container {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .services-container h1 {
+    color: #c79b7b; /* Your theme's pink shade */
+    margin-bottom: 20px;
+  }
+  
+  .services-container p {
+    color: #414942; /* Darker shade */
+    margin-bottom: 30px;
+    font-size: 1.2rem;
+  }
+  
+  .services-options {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+  }
+  
+  .service-link {
+    text-decoration: none;
+    padding: 10px 20px;
+    background-color: #c79b7b;
+    color: white;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease, transform 0.2s;
+  }
+  
+  .service-link:hover {
+    background-color: #a37461;
+    transform: scale(1.05);
+  }
