@@ -33,35 +33,37 @@ const LocateProduct = () => {
 
   return (
     <div className="locate-product-container">
-      <h2>Locate Product</h2>
-      <div className="product-search">
-        <label htmlFor="product">Choose a product:</label>
-        <select
-          id="product"
-          value={selectedProduct}
-          onChange={(e) => setSelectedProduct(e.target.value)}
-        >
-          <option value="">-- Select Product --</option>
-          <option value="Serum">Serum</option>
-          <option value="Moisturizer">Moisturizer</option>
-          <option value="Sunscreen">Sunscreen</option>
-          <option value="Cleanser">Cleanser</option>
-        </select>
-        <button onClick={handleSearch}>Search</button>
-      </div>
-
-      {filteredStores.length > 0 ? (
-        <div className="store-grid">
-          {filteredStores.map((store, index) => (
-            <div key={index} className="store-card">
-              <h3>{store.name}</h3>
-              <p>{store.address}</p>
-            </div>
-          ))}
+      <div className="locate-product-content">
+        <h2>Locate Product</h2>
+        <div className="product-search">
+          <label htmlFor="product">Choose a product:</label>
+          <select
+            id="product"
+            value={selectedProduct}
+            onChange={(e) => setSelectedProduct(e.target.value)}
+          >
+            <option value="">-- Select Product --</option>
+            <option value="Serum">Serum</option>
+            <option value="Moisturizer">Moisturizer</option>
+            <option value="Sunscreen">Sunscreen</option>
+            <option value="Cleanser">Cleanser</option>
+          </select>
+          <button onClick={handleSearch}>Search</button>
         </div>
-      ) : (
-        selectedProduct && <p>No stores found for this product.</p>
-      )}
+
+        {filteredStores.length > 0 ? (
+          <div className="store-grid">
+            {filteredStores.map((store, index) => (
+              <div key={index} className="store-card">
+                <h3>{store.name}</h3>
+                <p>{store.address}</p>
+              </div>
+            ))}
+          </div>
+        ) : (
+          selectedProduct && <p>No stores found for this product.</p>
+        )}
+      </div>
     </div>
   );
 };
