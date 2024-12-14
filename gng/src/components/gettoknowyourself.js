@@ -48,38 +48,33 @@ const GetToKnowYourself = () => {
             <h2>What is your age group?</h2>
             <div className="options-container">
               <div
-                className="option-box"
+                className="option-box age-below18"
                 onClick={() => handleSelect("ageGroup", "Below 18")}
               >
-                <img src="/images/teen.png" alt="Below 18" />
                 <p>Below 18</p>
               </div>
               <div
-                className="option-box"
+                className="option-box age-18to25"
                 onClick={() => handleSelect("ageGroup", "18-25")}
               >
-                <img src="/images/young.png" alt="18-25" />
                 <p>18-25</p>
               </div>
               <div
-                className="option-box"
+                className="option-box age-26to35"
                 onClick={() => handleSelect("ageGroup", "26-35")}
               >
-                <img src="/images/adult.png" alt="26-35" />
                 <p>26-35</p>
               </div>
               <div
-                className="option-box"
+                className="option-box age-36to45"
                 onClick={() => handleSelect("ageGroup", "36-45")}
               >
-                <img src="/images/mature.png" alt="36-45" />
                 <p>36-45</p>
               </div>
               <div
-                className="option-box"
+                className="option-box age-above45"
                 onClick={() => handleSelect("ageGroup", "Above 45")}
               >
-                <img src="/images/senior.png" alt="Above 45" />
                 <p>Above 45</p>
               </div>
             </div>
@@ -91,38 +86,33 @@ const GetToKnowYourself = () => {
             <h2>What is your skin type?</h2>
             <div className="options-container">
               <div
-                className="option-box"
+                className="option-box skin-normal"
                 onClick={() => handleSelect("skinType", "Normal")}
               >
-                <img src="/images/normal.png" alt="Normal" />
                 <p>Normal</p>
               </div>
               <div
-                className="option-box"
+                className="option-box skin-dry"
                 onClick={() => handleSelect("skinType", "Dry")}
               >
-                <img src="/images/dry.png" alt="Dry" />
                 <p>Dry</p>
               </div>
               <div
-                className="option-box"
+                className="option-box skin-oily"
                 onClick={() => handleSelect("skinType", "Oily")}
               >
-                <img src="/images/oily.png" alt="Oily" />
                 <p>Oily</p>
               </div>
               <div
-                className="option-box"
+                className="option-box skin-combination"
                 onClick={() => handleSelect("skinType", "Combination")}
               >
-                <img src="/images/combination.png" alt="Combination" />
                 <p>Combination</p>
               </div>
               <div
-                className="option-box"
+                className="option-box skin-sensitive"
                 onClick={() => handleSelect("skinType", "Sensitive")}
               >
-                <img src="/images/sensitive.png" alt="Sensitive" />
                 <p>Sensitive</p>
               </div>
             </div>
@@ -168,31 +158,27 @@ const GetToKnowYourself = () => {
             <h2>What type of product are you looking for?</h2>
             <div className="options-container">
               <div
-                className="option-box"
+                className="option-box product-cleanser"
                 onClick={() => handleSelect("productType", "Cleanser")}
               >
-                <img src="/images/cleanser.png" alt="Cleanser" />
                 <p>Cleanser</p>
               </div>
               <div
-                className="option-box"
+                className="option-box product-moisturizer"
                 onClick={() => handleSelect("productType", "Moisturizer")}
               >
-                <img src="/images/moisturizer.png" alt="Moisturizer" />
                 <p>Moisturizer</p>
               </div>
               <div
-                className="option-box"
+                className="option-box product-serum"
                 onClick={() => handleSelect("productType", "Serum")}
               >
-                <img src="/images/serum.png" alt="Serum" />
                 <p>Serum</p>
               </div>
               <div
-                className="option-box"
+                className="option-box product-sunscreen"
                 onClick={() => handleSelect("productType", "Sunscreen")}
               >
-                <img src="/images/sunscreen.png" alt="Sunscreen" />
                 <p>Sunscreen</p>
               </div>
             </div>
