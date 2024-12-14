@@ -85,3 +85,93 @@
   font-weight: bold;
   text-align: center;
 }
+
+/* Styling for the result slide */
+.answer-box {
+  background: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+  text-align: center;
+  animation: fadeIn 0.8s ease; /* Smooth fade-in */
+}
+
+.answer-box h2 {
+  font-size: 24px;
+  color: #C79B7B;
+  margin-bottom: 20px;
+}
+
+.answer-box p {
+  font-size: 16px;
+  color: #414942;
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+.answer-box h3 {
+  margin-top: 20px;
+  font-size: 20px;
+  color: #6BA292;
+  font-weight: bold;
+}
+
+/* Back button styling */
+button {
+  background-color: #c79b7b;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 20px;
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+
+button:hover {
+  background-color: #b08269;
+  transform: scale(1.05);
+}
+
+/* Styling for price range buttons */
+.price-range-container {
+  display: flex; /* Flexbox for alignment */
+  flex-wrap: wrap; /* Allow wrapping if boxes exceed available space */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  gap: 20px; /* Space between the boxes */
+  margin-top: 20px; /* Space between heading and buttons */
+}
+
+.price-box {
+  background-color: #fdf7f3; /* Soft beige */
+  border: 2px solid #c79b7b; /* Pink border */
+  border-radius: 50px; /* Rounded shape */
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #414942; /* Deep green text */
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.price-box:hover {
+  background-color: #c79b7b; /* Pink hover */
+  color: #fff; /* White text on hover */
+  transform: scale(1.1); /* Slightly larger on hover */
+}
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

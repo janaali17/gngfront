@@ -119,38 +119,39 @@ const GetToKnowYourself = () => {
             <button onClick={previousStep}>Back</button>
           </div>
         );
-      case 3:
-        return (
-          <div className="slide">
-            <h2>What is your price range?</h2>
-            <div className="options-container">
-              <div
-                className="option-box"
-                onClick={() => handleSelect("priceRange", "$10-$20")}
-              >
-                <p>$10-$20</p>
+        case 3:
+          return (
+            <div className="slide">
+              <h2>What is your price range?</h2>
+              <div className="price-range-container">
+                <div
+                  className="price-box"
+                  onClick={() => handleSelect("priceRange", "$10-$20")}
+                >
+                  $10-$20
+                </div>
+                <div
+                  className="price-box"
+                  onClick={() => handleSelect("priceRange", "$20-$50")}
+                >
+                  $20-$50
+                </div>
+                <div
+                  className="price-box"
+                  onClick={() => handleSelect("priceRange", "$50-$100")}
+                >
+                  $50-$100
+                </div>
+                <div
+                  className="price-box"
+                  onClick={() => handleSelect("priceRange", "$100+")}
+                >
+                  $100+
+                </div>
               </div>
-              <div
-                className="option-box"
-                onClick={() => handleSelect("priceRange", "$20-$50")}
-              >
-                <p>$20-$50</p>
-              </div>
-              <div
-                className="option-box"
-                onClick={() => handleSelect("priceRange", "$50-$100")}
-              >
-                <p>$50-$100</p>
-              </div>
-              <div
-                className="option-box"
-                onClick={() => handleSelect("priceRange", "$100+")}
-              >
-                <p>$100+</p>
-              </div>
+              <button onClick={previousStep}>Back</button>
             </div>
-            <button onClick={previousStep}>Back</button>
-          </div>
+          
         );
       case 4:
         return (
@@ -185,26 +186,23 @@ const GetToKnowYourself = () => {
             <button onClick={previousStep}>Back</button>
           </div>
         );
-      case 5:
-        return (
-          <div className="slide">
-            <h2>Your Perfect Product</h2>
-            <p>
-              Based on your answers:
-              <br />
-              <strong>Age Group:</strong> {answers.ageGroup}
-              <br />
-              <strong>Skin Type:</strong> {answers.skinType}
-              <br />
-              <strong>Price Range:</strong> {answers.priceRange}
-              <br />
-              <strong>Product Type:</strong> {answers.productType}
-              <br />
-              <strong>Recommendation:</strong> {recommendation}
-            </p>
-            <button onClick={previousStep}>Back</button>
-          </div>
-        );
+        case 5:
+          return (
+            <div className="slide">
+              <div className="answer-box">
+                <h2>Your Perfect Product</h2>
+                <p>
+                  <strong>Age Group:</strong> {answers.ageGroup} <br />
+                  <strong>Skin Type:</strong> {answers.skinType} <br />
+                  <strong>Price Range:</strong> {answers.priceRange} <br />
+                  <strong>Product Type:</strong> {answers.productType} <br />
+                </p>
+                <h3>Recommendation: {recommendation}</h3>
+                <button onClick={previousStep}>Back</button>
+              </div>
+            </div>
+          );
+      
       default:
         return null;
     }
