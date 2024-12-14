@@ -1,103 +1,87 @@
-/* Background container */
-.get-to-know-yourself-container {
-  background-image: url("../images/gettoknowback.jpg"); /* Add background image */
-  background-size: cover; /* Cover the entire container */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Prevent repetition */
-  min-height: 100vh; /* Full height of the viewport */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  position: relative;
-}
-
-/* Optional overlay for better text readability */
-.get-to-know-yourself-container::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.3); /* Add semi-transparent overlay */
-  z-index: -1; /* Place behind content */
-}
-
-/* Main container styling */
-.get-to-know-container {
-  text-align: center;
-  margin: 20px auto;
-  width: 80%;
-  max-width: 600px;
-  background-color: #fdf7f3; /* Light beige */
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  z-index: 1; /* Ensure it stays above the overlay */
-}
-
-/* Slide title styling */
-.slide h2 {
-  color: #414942; /* Deep green */
-  margin-bottom: 15px;
-}
-
-/* Options container styling */
-.options-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 15px;
-}
-
-/* Individual option box */
+/* Base styling for boxes */
 .option-box {
   width: 120px;
   height: 150px;
-  border: 1px solid #C79B7B; /* Pink */
+  border: 1px solid #C79B7B;
   border-radius: 10px;
-  padding: 10px;
-  text-align: center;
-  cursor: pointer;
-  transition: transform 0.2s, background-color 0.3s;
-  background-color: #fff;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  overflow: hidden;
+}
+.options-container {
+  display: flex; /* Flexbox for alignment */
+  flex-wrap: wrap; /* Allow wrapping if boxes exceed available space */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  gap: 20px; /* Space between the boxes */
+  height: 100%; /* Full height of the container for vertical centering */
+}
+.slide {
+  display: flex;
+  flex-direction: column; /* Keep heading on top and boxes below */
+  justify-content: center; /* Center all content vertically */
+  align-items: center; /* Center all content horizontally */
+  min-height: 100vh; /* Full viewport height */
+  text-align: center; /* Align text for headings */
 }
 
-.option-box:hover {
-  transform: scale(1.05);
-  background-color: #c79b7b; /* Pink hover */
+/* Age group backgrounds */
+.age-below18 {
+  background-image: url("../images/below18.jpg");
+}
+.age-18to25 {
+  background-image: url("../images/18-25.jpg");
+}
+.age-26to35 {
+  background-image: url("../images/25-35.jpg");
+}
+.age-36to45 {
+  background-image: url("../images/36-45.jpg");
+}
+.age-above45 {
+  background-image: url("../images/above45.jpg");
 }
 
-/* Option image styling */
-.option-box img {
-  width: 80px;
-  height: 80px;
-  object-fit: cover;
-  margin-bottom: 10px;
+/* Skin type backgrounds */
+.skin-normal {
+  background-image: url("../images/normal.jpg");
+}
+.skin-dry {
+  background-image: url("../images/dry.jpg");
+}
+.skin-oily {
+  background-image: url("../images/oily.jpg");
+}
+.skin-sensitive {
+  background-image: url("../images/sensitive.jpg");
+}
+.skin-combination {
+  background-image: url("../images/combination.jpg");
 }
 
-/* Option text styling */
+/* Product type backgrounds */
+.product-cleanser {
+  background-image: url("../images/cleanser.jpg");
+}
+.product-moisturizer {
+  background-image: url("../images/moist.jpg");
+}
+.product-serum {
+  background-image: url("../images/serum.jpg");
+}
+.product-sunscreen {
+  background-image: url("../images/sunscreen.jpg");
+}
+
+/* Text styling inside boxes */
 .option-box p {
-  color: #414942;
-  font-weight: bold;
-}
-
-/* Button styling */
-button {
-  background-color: #c79b7b;
-  color: white;
-  border: none;
-  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 5px;
   border-radius: 5px;
-  cursor: pointer;
-  font-size: 1rem;
-  margin-top: 20px;
-  transition: background-color 0.3s ease, transform 0.2s;
-}
-
-button:hover {
-  background-color: #b08269;
-  transform: scale(1.05);
+  font-weight: bold;
+  text-align: center;
 }
