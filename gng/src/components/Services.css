@@ -4,12 +4,12 @@
   }
   
   .services-container h1 {
-    color: #c79b7b; /* Your theme's pink shade */
+    color: #c79b7b; 
     margin-bottom: 20px;
   }
   
   .services-container p {
-    color: #414942; /* Darker shade */
+    color: #414942; 
     margin-bottom: 30px;
     font-size: 1.2rem;
   }

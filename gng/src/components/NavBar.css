@@ -4,14 +4,14 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
-  background-color: rgba(199, 155, 123, 0.8); /* Transparent chic color */
+  background-color: rgba(199, 155, 123, 0.8); 
   color: white;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for elegance */
-  animation: fadeIn 1.5s ease; /* Smooth fade-in animation */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+  animation: fadeIn 1.5s ease; 
 }
 
 @keyframes fadeIn {
@@ -42,7 +42,7 @@
   position: absolute;
   top: 50px;
   left: 20px;
-  background-color: rgba(199, 155, 123, 0.9); /* Slightly transparent */
+  background-color: rgba(199, 155, 123, 0.9); 
   border-radius: 10px;
   padding: 15px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
@@ -53,9 +53,9 @@
 }
 
 .nav-link {
-  font-family: 'Playfair Display', serif; /* Elegant serif font */
+  font-family: 'Playfair Display', serif; 
   font-size: 1.1rem;
-  font-weight: normal; /* Ensure no bold font */
+  font-weight: normal; 
   color: white;
   text-decoration: none;
   margin: 5px 0;
@@ -63,29 +63,28 @@
 }
 
 .nav-link:hover {
-  color: #f0e5d8; /* Soft hover effect */
+  color: #f0e5d8; 
 }
 
-/* Dropdown Styles */
 .dropdown {
   position: relative;
 }
 
 .dropdown-toggle {
   cursor: pointer;
-  color: white; /* Keep the text color white for elegance */
-  background: none; /* Remove the background box */
-  border: none; /* Remove the border around the button */
-  font-size: 1.1rem; /* Keep font size consistent */
-  padding: 0; /* Remove padding to eliminate the box appearance */
-  font-weight: normal; /* Ensure no bold font */
+  color: white; 
+  background: none; 
+  border: none; 
+  font-size: 1.1rem; 
+  padding: 0; 
+  font-weight: normal; 
 }
 
 .dropdown-menu {
   display: none;
   flex-direction: column;
   position: absolute;
-  top: calc(100% + 5px); /* Align dropdown below Services with a small gap */
+  top: calc(100% + 5px); 
   left: 0;
   background-color: #ffffff;
   color: #000;
@@ -93,17 +92,16 @@
   padding: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   z-index: 1000;
-  width: max-content; /* Ensure dropdown width matches its content */
+  width: max-content; 
 }
-
 .dropdown-menu .dropdown-item {
   margin: 5px 0;
-  padding: 8px 15px; /* Add padding to fit longer text */
+  padding: 8px 15px; 
   color: #000;
   text-decoration: none;
   border-radius: 5px;
   text-align: left;
-  white-space: nowrap; /* Ensure single-line text */
+  white-space: nowrap; 
 }
 
 .dropdown-menu .dropdown-item:hover {
@@ -112,18 +110,18 @@
 }
 
 .dropdown:hover .dropdown-menu {
-  display: flex; /* Show dropdown on hover */
+  display: flex; 
 }
 
 .navbar-right {
   display: flex;
-  gap: 15px; /* Space between Log In and Sign Up */
-  margin-right: 20px; /* Adjust margin for alignment */
-  white-space: nowrap; /* Prevent text wrapping */
+  gap: 15px;
+  margin-right: 20px; 
+  white-space: nowrap; 
 }
 
 .navbar-right .nav-link {
-  background-color: rgba(199, 155, 123, 0.9); /* Button style for links */
+  background-color: rgba(199, 155, 123, 0.9); 
   color: white;
   padding: 8px 15px;
   border-radius: 20px;
@@ -133,7 +131,7 @@
 }
 
 .navbar-right .nav-link:last-child {
-  margin-left: -10px; /* Move "Sign Up" to the left */
+  margin-left: -10px; 
 }
 
 .navbar-right .nav-link:hover {
@@ -142,7 +140,7 @@
 }
 
 body {
-  margin-top: 60px; /* Prevent content from being covered by the navbar */
+  margin-top: 60px; 
 }
 
 @media (max-width: 768px) {

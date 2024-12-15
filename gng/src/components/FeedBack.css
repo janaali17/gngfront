@@ -64,7 +64,7 @@ body::before {
 
 .form-group textarea {
   resize: none;
-  height: 100px; /* Ensure text area matches the alignment visually */
+  height: 100px; 
 }
 
 .submit-button {
@@ -82,16 +82,16 @@ body::before {
   background-color: #ae8d6e;
 }
 
-/* Success message styling */
+
 .success-message {
   margin-top: 15px;
   font-size: 16px;
-  color: #28a745; /* Green for success */
+  color: #28a745; 
   font-weight: bold;
-  animation: fade-in-out 5s ease-in-out; /* Animation for fading */
+  animation: fade-in-out 5s ease-in-out; 
 }
 
-/* Animation for success message */
+
 @keyframes fade-in-out {
   0% {
     opacity: 0;

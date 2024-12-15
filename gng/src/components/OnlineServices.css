@@ -1,19 +1,19 @@
-/* Main background container */
+
 .online-services-container {
-  background-image: url("../images/onlineback.jpg"); /* Add the background image */
-  background-size: cover; /* Ensure the image covers the container */
-  background-position: center; /* Center the image */
-  background-repeat: no-repeat; /* Prevent repetition */
-  min-height: 100vh; /* Full viewport height */
+  background-image: url("../images/onlineback.jpg"); 
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  min-height: 100vh; 
   display: flex;
-  justify-content: center; /* Center content horizontally */
-  align-items: center; /* Center content vertically */
+  justify-content: center; 
+  align-items: center; 
   padding: 20px;
   position: relative;
-  filter: brightness(0.85); /* Slightly fade the background */
+  filter: brightness(0.85); 
 }
 
-/* Optional overlay for better text readability */
+
 .online-services-container::after {
   content: "";
   position: absolute;
@@ -21,37 +21,36 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.2); /* Light semi-transparent overlay */
-  z-index: -1; /* Ensure it stays behind the content */
+  background: rgba(0, 0, 0, 0.2); 
+  z-index: -1; 
 }
 
-/* FAQ container */
+
 .faq-container {
   text-align: center;
   margin: 20px auto;
   width: 80%;
   max-width: 500px;
-  background-color: rgba(255, 255, 255, 0.9); /* Light background with slight transparency */
+  background-color: rgba(255, 255, 255, 0.9); 
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  z-index: 1; /* Ensure it stays above the overlay */
+  z-index: 1; 
 }
 
-/* FAQ items */
 .faq-item h3 {
   cursor: pointer;
-  color: #414942; /* Deep green */
+  color: #414942; 
   margin-bottom: 10px;
 }
 
 .faq-item h3:hover {
-  color: #c79b7b; /* Pink */
+  color: #c79b7b; 
 }
 
 .faq-item p {
   color: #414942;
-  background-color: #fdf7f3; /* Light beige */
+  background-color: #fdf7f3; 
   padding: 10px;
   border-radius: 5px;
 }
