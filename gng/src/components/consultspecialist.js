@@ -38,7 +38,7 @@ const ConsultSpecialist = () => {
             <option value="">Select your diagnosis</option>
             <option value="Acne">Acne</option>
             <option value="Eczema">Eczema</option>
-            <option value="Psoriasis">Cosmetics</option>
+            <option value="cosmetics">Cosmetics</option>
             <option value="Other">Other</option>
           </select>
           <label>Doctor's Name</label>
@@ -63,4 +63,4 @@ const ConsultSpecialist = () => {
   );
 };
 
-export default ConsultSpecialist;
+export default ConsultSpecialist; 

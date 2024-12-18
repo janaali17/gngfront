@@ -13,11 +13,11 @@ const Feedback = () => {
     setFormData({ ...formData, [name]: value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e) => { 
     e.preventDefault();
 
     // Check if all fields are filled
-    if (!formData.rating || !formData.comments.trim()) {
+    if (!formData.rating || !formData.comments.trim) {
       alert("Please fill in all fields before submitting.");
       return;
     }

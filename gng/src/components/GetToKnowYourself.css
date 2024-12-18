@@ -26,8 +26,8 @@
   justify-content: center; /* Center all content vertically */
   align-items: center; /* Center all content horizontally */
   min-height: 100vh; /* Full viewport height */
-  text-align: center; /* Align text for headings */
-}
+  text-align: center; /* Align text for headings */ 
+} 
 
 /* Age group backgrounds */
 .age-below18 {
@@ -78,7 +78,7 @@
 }
 
 /* Text styling inside boxes */
-.option-box p {
+.option-box p { /*p no pics*/
   background: rgba(255, 255, 255, 0.8);
   padding: 5px;
   border-radius: 5px;
@@ -152,8 +152,8 @@ button:hover {
   padding: 10px 20px;
   font-size: 16px;
   font-weight: bold;
-  color: #414942; /* Deep green text */
-  text-align: center;
+  color: #414942; 
+  text-align: left;
   cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
